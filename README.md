@@ -51,7 +51,7 @@ This project is quite a performance hog, so a VM inevitably limits your frame ra
 Once you have your OS up and running, you'll want to create an environment for OpenCV to avoid package conflicts. I recommend [Conda](https://conda.io/docs/download.html) for this. Once Conda is installed, run the following commands in the terminal;
 
 ```
-$ conda create -n opencv -c menpo opencv3 numba cython
+$ conda create -n opencv -c menpo opencv-python numba cython
 ```
 
 Activate the environment and then install **pynput** as that's not available via Conda;
@@ -74,7 +74,7 @@ Now the library is built, you can run the simulation any time after that by call
 python run.py
 ```
 
-### MacOS (Currently Not Working)
+### MacOS ~~(Currently Not Working)~~ Provisionally working, using commit 69f66
 
 *Note that as of early March 2017, this method no longer works. It's not clear if that's because the project is using more of OpenCV or the available packages have changed.*
 
