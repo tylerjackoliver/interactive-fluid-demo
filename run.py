@@ -115,7 +115,6 @@ def run_sim():
         sim.udpate(fps.last_dt)
         output = sim.render(camera, render_mask_velocity=(optical_flow.current==1), render_mask=(render_mask.current == 1))
         output_shape = np.shape(output)
-
         # add the GUI
         text_color = (0, 0, 255) if bg_mode.current == 0 else (255, 255, 0)
         if debugMode.current == 0 and display_counter <= 0:
@@ -130,6 +129,11 @@ def run_sim():
 
         # render the output
         cv2.imshow('window', output)
+
+        # Jack Tyler 03/02 - below ensures the correct control flow from cv2.imshow (displays
+        # window for 1000/30 ms (i.e. 30Hz)); appears to fix spinning beachball issue on MacOS
+
+        cv2.waitKey(33)
 
         for key in pressed_keys:
             # update the options (poll for input, cycle)

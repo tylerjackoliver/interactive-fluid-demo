@@ -87,7 +87,7 @@ $ brew install gcc --without-multilib
 ```
 Again, Conda is recommended for creating an conflict-free environment. Once that is installed, run the following;
 ```
-$ conda create -n opencv -c conda-forge opencv numba cython numpy
+$ conda create -n opencv -c conda-forge opencv-python numba cython numpy
 ```
 Then continue with the installation instructions for Ubuntu from the `source activate opencv` step.
 
